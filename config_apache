@@ -1,0 +1,34 @@
+<VirtualHost *:80>
+        #ServerName www.example.com
+
+        #ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/html
+        ServerName pncproject.tk
+        ServerAlias pncproject.tk #www.
+
+        WSGIDaemonProcess flaskapp threads=25
+        WSGIScriptAlias / /var/www/html/flaskapp/flaskapp.wsgi
+        WSGIApplicationGroup %{GLOBAL}
+        <Directory flaskapp>
+             WSGIProcessGroup flaskapp
+             WSGIApplicationGroup %{GLOBAL}
+             Order allow,deny
+             Allow from all
+        </Directory>
+		 <Directory flaskapp/templates/>
+             Order allow,deny
+             Allow from all
+        </Directory>
+        Alias /static /var/www/html/flaskapp/static
+        <Directory /var/www/html/flaskapp/static/>
+             Order allow,deny
+             Allow from all
+        </Directory>
+		ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
+
+
+
+
