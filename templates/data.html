@@ -1,0 +1,34 @@
+{% extends 'data_base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+        <button type="button" onclick="myFunction()">Refresh !</button>
+
+        <p id="demo">Nhan de cap nhat.</p>
+        <script>
+            function myFunction(){
+                window.location.reload();
+                document.getElementById("demo").innerHTML="Da Refresh- Tiep tuc F5"
+            }
+        </script>
+        <br>
+        <table style="width: 70%;">
+            <tr>
+                <th>Thoi gian</th>
+                <th>Ngay</th>
+                <th>Bienso</th>
+                <th>Status</th>
+            </tr>
+            {%for i in range(0, len_n)%}
+            <tr>
+                <th>{{time[i]}}</th>
+                <th>{{day[i]}}</th>
+                <th>{{bienso[i]}}</th>
+                <th>{{status[i]}}</th>
+            </tr>
+            {%endfor%}
+        </table>
+{% endblock %}

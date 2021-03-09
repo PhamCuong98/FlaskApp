@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'index_base.html' %}
 
 {% block head %}
 
@@ -16,6 +16,7 @@
             <em>De tai: Tracking bien so</em>
         </p>
         <br>
+        <!-- Func cho button reset-->
         <button type="button" onclick="myFunction()">Refresh !</button>
 
         <p id="demo">Nhan de cap nhat.</p>
@@ -25,6 +26,12 @@
                 document.getElementById("demo").innerHTML="Da Refresh- Tiep tuc F5"
             }
         </script>
+
+        <!-- Func cho button chuyen trang data-->
+        <form method ="post" action="">
+            <input type="submit" name="submit_button" value="data">
+        </form> 
+
         <br>
         <table style="width: 70%;">
             <tr>
