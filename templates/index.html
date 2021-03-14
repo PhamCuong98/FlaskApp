@@ -1,13 +1,17 @@
 {% extends 'index_base.html' %}
 
 {% block head %}
-
+<title>Danh sach hien tai</title>
 {% endblock %}
 
 {% block body %}
-        <h1 style="font-size: 250%;">THONG KE BIEN SO</h1>
-        <img src="/static/images/pnc.jpg", style= "float: right; height: 400px; width: 400px;"/>
-        <p style="font-size: 150%; color: brown; margin: 10px;"> 
+        <center>
+            <h1>
+                THONG KE BIEN SO
+            </h1>
+        </center>
+        <img src="/static/images/pnc.jpg">
+        <p> 
             <!-- in dam text-->
             <b>Pham Ngoc Cuong</b><br>
             <!-- Nghieng text-->
@@ -19,7 +23,7 @@
         <!-- Func cho button reset-->
         <button type="button" onclick="myFunction()">Refresh !</button>
 
-        <p id="demo">Nhan de cap nhat.</p>
+        <!-- <p id="demo">Nhan de cap nhat.</p> -->
         <script>
             function myFunction(){
                 window.location.reload();
@@ -29,16 +33,16 @@
 
         <!-- Func cho button chuyen trang data-->
         <form method ="post" action="">
-            <input type="submit" name="submit_button" value="data">
+            <input type="submit" name="submit_button" value="Data">
         </form> 
 
         <br>
         <table style="width: 70%;">
             <tr>
-                <th>Thoi gian</th>
-                <th>Ngay</th>
-                <th>Bienso</th>
-                <th>ID</th>
+                <th>Thời gian</th>
+                <th>Ngày</th>
+                <th>Biển Số</th>
+                <th>Mã thẻ</th>
             </tr>
             {%for i in range(0, len_n)%}
             <tr>

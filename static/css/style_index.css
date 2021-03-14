@@ -1,0 +1,35 @@
+body {
+    background-color: #212121;
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 0.1em;
+}
+
+h1{
+    font-size: 70px;
+    color:tomato;
+}
+
+img{
+    float: right;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 400px;
+}
+
+p{
+    font-size: 150%;
+    color: brown;
+}
+
+
+
+table, th, tr{
+    padding: 10px;
+    border: 1px solid whitesmoke;
+    text-align: center;
+}
+table{
+    width: 70%;
+}

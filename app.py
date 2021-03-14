@@ -3,7 +3,6 @@ from flaskext.mysql import MySQL
 import pickle
 import os
 
-
 app = Flask(__name__)
 
 
@@ -49,7 +48,7 @@ def accept():
   print(bienso)
   len_n = len(time)
   if request.method == 'POST':
-    if request.form['submit_button'] == 'data':
+    if request.form['submit_button'] == 'Data':
       return redirect(url_for("data"))
   return render_template('index.html', time= time, day= day, bienso= bienso, len_n=len_n)
 

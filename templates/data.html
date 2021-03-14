@@ -15,12 +15,13 @@
             }
         </script>
         <br>
-        <table style="width: 70%;">
+        <center>
+        <table style="width: 80%;">
             <tr>
-                <th>Thoi gian</th>
-                <th>Ngay</th>
-                <th>Bienso</th>
-                <th>Status</th>
+                <th>Thời gian</th>
+                <th>Ngày</th>
+                <th>Biển số</th>
+                <th>Tình trạng</th>
             </tr>
             {%for i in range(0, len_n)%}
             <tr>
@@ -30,5 +31,7 @@
                 <th>{{status[i]}}</th>
             </tr>
             {%endfor%}
-        </table>
+        </table>    
+        </center>
+        
 {% endblock %}

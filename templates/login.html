@@ -1,27 +1,39 @@
 {% extends 'login_base.html' %}
 
 {% block head %}
-<h1 style="font-size: 300%;">Dang Nhap</h1>
+<title>Do an</title>
 {% endblock %}
 
 {% block body %}
-<div >
-  <h1>Please login</h1>
-  <br>
-  <form action="" method="post">
-      <div class="form-group">
-          <input type="text" class="form-control" style="width:50%;" placeholder="Username" name="username" value="{{
-        request.form.username }}">
+
+<form autocomplete="off" class="form"></form>
+  <div class="control">
+    <center>
+      <h1>Sign Up</h1>
+    </center>
+  </div>
+
+  <form class="container" action="" method="post">
+    <center>
+      <div class="input">
+        <input class"text" name="username" placeholder="Username" type="text" value="{{
+          request.form.username }}">
       </div>
-      <div class="form-group">
-          <input type="password" class="form-control" style="width:50%;" placeholder="Password" name="password"
-                 value="{{
-        request.form.password }}">
+    </center>
+
+    <center>
+      <div class="input">
+        <input class"text" name="password" placeholder="Password" type="password" value="{{
+          request.form.password }}">
       </div>
-      <input class="btn btn-success" type="submit" value="Login">
+    </center>
+
+    <center>
+      <button class="button" type="submit">Login</button>
+    </center>
   </form>
   {% if error %}
   <p class="error"><strong>Error:</strong> {{ error }}
-      {% endif %}
-</div>
+  {% endif %}
+</form>
 {% endblock %}  
