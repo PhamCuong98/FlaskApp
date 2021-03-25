@@ -22,6 +22,7 @@
                 <th>Ngày</th>
                 <th>Biển số</th>
                 <th>Tình trạng</th>
+                <th>Mã thẻ</th>
             </tr>
             {%for i in range(0, len_n)%}
             <tr>
@@ -29,6 +30,7 @@
                 <th>{{day[i]}}</th>
                 <th>{{bienso[i]}}</th>
                 <th>{{status[i]}}</th>
+                <th>{{Id[i]}}</th>
             </tr>
             {%endfor%}
         </table>    

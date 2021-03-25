@@ -38,10 +38,12 @@ def accept():
   time = []
   day = []
   bienso=[]
+  Id=[]
   for i in range(len(myresult)):
     time.append(myresult[i][0])
     day.append(myresult[i][1])
     bienso.append(myresult[i][2])
+    Id.append(myresult[i][3])
   print(".......")
   print(time)
   print(day)
@@ -50,7 +52,7 @@ def accept():
   if request.method == 'POST':
     if request.form['submit_button'] == 'Data':
       return redirect(url_for("data"))
-  return render_template('index.html', time= time, day= day, bienso= bienso, len_n=len_n)
+  return render_template('index.html', time= time, day= day, bienso= bienso, len_n=len_n, Id= Id)
 
 @app.route('/data')
 def data():
@@ -62,18 +64,20 @@ def data():
   day = []
   bienso=[]
   status= []
+  Id=[]
   for i in range(len(myresult)):
     time.append(myresult[i][0])
     day.append(myresult[i][1])
     bienso.append(myresult[i][2])
     status.append(myresult[i][3])
+    Id.append(myresult[i][4])
   print(".......")
   print(time)
   print(day)
   print(bienso)
   print(status)
   len_n = len(time)
-  return render_template('data.html', time= time, day= day, bienso= bienso, status= status, len_n= len_n)
+  return render_template('data.html', time= time, day= day, bienso= bienso, status= status, len_n= len_n, Id= Id)
 
 if __name__ == '__main__':
     app.run(debug= True)
