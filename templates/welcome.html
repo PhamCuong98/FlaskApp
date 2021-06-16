@@ -1,0 +1,43 @@
+{% extends 'welcome_base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<center>
+    <h1>
+        ĐỒ ÁN TỐT NGHIỆP
+    </h1>
+</center>
+<div class="Truong">
+    <img src="/static/images/logo.png">
+    
+</div>
+<div class="Khoa">
+    <img src="/static/images/LogoDTVT.png">
+</div>
+
+<div class="Spec">
+    <center>
+    <!-- Nghieng text-->
+    <i>Đại học Bách Khoa - Đại Học Đà Nẵng</i><br>
+    <!-- Nghieng text co cach dieu font-->
+    <em>Đề tài: Hệ thống nhận dạng biển số</em><br>
+    <!-- in dam text-->
+    <b>Sinh viên: Phạm Ngọc Cường</b><br>
+    <b>Người hướng dẫn: Thầy Hồ Viết Việt</b>
+</center>
+</div>
+
+
+<form autocomplete="off" class="form"></form>
+<center>
+    <form method="POST" action="/welcomes">
+        <input type="submit" name="Live" value="Live">
+        <input type="submit" name="Data" value="Data">
+    </form>
+    
+</center>
+
+{% endblock %}  

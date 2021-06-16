@@ -26,11 +26,27 @@ def login():
     if request.form['username'] != 'phamcuong' or request.form['password'] != '123':
       error = 'Sai ID hoac mat khau.'
     else:
-      return redirect(url_for('accept'))
+      return redirect(url_for('welcomes'))
   return render_template('login.html', error=error)
 
-@app.route('/accept', methods= ['GET','POST'])
-def accept():
+@app.route('/welcomes', methods = ['GET', 'POST'])
+def welcomes():
+  if request.method == 'POST':
+    print("Vao Post")
+    if request.form.get('Live') == 'Live':
+      print("Live")
+      return redirect(url_for('live'))
+
+    if  request.form.get('Data') == 'Data':
+      print("Data")
+      return redirect(url_for('data'))
+  elif request.method == 'GET':
+    print("None")
+  return render_template("welcome.html")
+
+
+@app.route('/live', methods= ['GET','POST'])
+def live():
   cursor= mysql.connect().cursor()
   cursor.execute("SELECT * FROM realtime")
   myresult = cursor.fetchall()
@@ -45,9 +61,7 @@ def accept():
     bienso.append(myresult[i][2])
     Id.append(myresult[i][3])
   print(".......")
-  print(time)
-  print(day)
-  print(bienso)
+  print(time, day, bienso)
   len_n = len(time)
   if request.method == 'POST':
     if request.form['submit_button'] == 'Data':
@@ -72,10 +86,7 @@ def data():
     status.append(myresult[i][3])
     Id.append(myresult[i][4])
   print(".......")
-  print(time)
-  print(day)
-  print(bienso)
-  print(status)
+  print(time, day, bienso, status)
   len_n = len(time)
   return render_template('data.html', time= time, day= day, bienso= bienso, status= status, len_n= len_n, Id= Id)
 
